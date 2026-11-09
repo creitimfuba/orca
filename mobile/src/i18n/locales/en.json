@@ -551,6 +551,17 @@
       "connectionSlow": "Connection too slow",
       "phoneStopped": "Stopped on this phone",
       "stopped": "Dictation stopped"
+    },
+    "announce": {
+      "listeningOnPhone": "Listening. Transcribing on this phone.",
+      "listeningOn": "Listening. Transcribing on {{computer}}.",
+      "listeningOnComputer": "Listening. Transcribing on the computer.",
+      "finishing": "Finishing.",
+      "inserted": "Inserted.",
+      "cancelled": "Dictation cancelled.",
+      "movedTo": "This phone stopped transcribing. Continuing on {{computer}}.",
+      "movedToComputer": "This phone stopped transcribing. Continuing on the computer.",
+      "stoppedKept": "Dictation stopped. {{reason}}. Your recording is kept."
     }
   },
   "home": {

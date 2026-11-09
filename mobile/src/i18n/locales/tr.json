@@ -1336,6 +1336,17 @@
       "phoneStopped": "Bu telefonda durdu",
       "stopped": "Dikte durdu",
       "recordingKept": "Kayıt saklandı"
+    },
+    "announce": {
+      "listeningOnPhone": "Dinleniyor. Bu telefonda yazıya dökülüyor.",
+      "listeningOn": "Dinleniyor. {{computer}} üzerinde yazıya dökülüyor.",
+      "listeningOnComputer": "Dinleniyor. Bilgisayarda yazıya dökülüyor.",
+      "finishing": "Tamamlanıyor.",
+      "inserted": "Eklendi.",
+      "cancelled": "Dikte iptal edildi.",
+      "movedTo": "Bu telefon yazıya dökmeyi bıraktı. {{computer}} üzerinde devam ediliyor.",
+      "movedToComputer": "Bu telefon yazıya dökmeyi bıraktı. Bilgisayarda devam ediliyor.",
+      "stoppedKept": "Dikte durdu. {{reason}}. Kaydınız saklandı."
     }
   },
   "files": {

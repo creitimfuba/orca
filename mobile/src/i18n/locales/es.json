@@ -1377,6 +1377,17 @@
       "phoneStopped": "Detenido en este teléfono",
       "stopped": "Dictado detenido",
       "recordingKept": "Grabación guardada"
+    },
+    "announce": {
+      "listeningOnPhone": "Escuchando. Transcribiendo en este teléfono.",
+      "listeningOn": "Escuchando. Transcribiendo en {{computer}}.",
+      "listeningOnComputer": "Escuchando. Transcribiendo en el ordenador.",
+      "finishing": "Terminando.",
+      "inserted": "Insertado.",
+      "cancelled": "Dictado cancelado.",
+      "movedTo": "Este teléfono dejó de transcribir. Continúa en {{computer}}.",
+      "movedToComputer": "Este teléfono dejó de transcribir. Continúa en el ordenador.",
+      "stoppedKept": "Dictado detenido. {{reason}}. Tu grabación se conserva."
     }
   },
   "files": {

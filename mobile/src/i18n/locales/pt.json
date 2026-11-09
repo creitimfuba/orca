@@ -1377,6 +1377,17 @@
       "phoneStopped": "Parou neste telefone",
       "stopped": "Ditado interrompido",
       "recordingKept": "Gravação mantida"
+    },
+    "announce": {
+      "listeningOnPhone": "Ouvindo. Transcrevendo neste telefone.",
+      "listeningOn": "Ouvindo. Transcrevendo em {{computer}}.",
+      "listeningOnComputer": "Ouvindo. Transcrevendo no computador.",
+      "finishing": "Finalizando.",
+      "inserted": "Inserido.",
+      "cancelled": "Ditado cancelado.",
+      "movedTo": "Este telefone parou de transcrever. Continuando em {{computer}}.",
+      "movedToComputer": "Este telefone parou de transcrever. Continuando no computador.",
+      "stoppedKept": "Ditado interrompido. {{reason}}. Sua gravação foi mantida."
     }
   },
   "files": {
