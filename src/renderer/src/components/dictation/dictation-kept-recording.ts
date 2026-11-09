@@ -5,6 +5,7 @@ import {
 import type { DictationInsertionTarget } from './dictation-insertion-target'
 import type { DictationTranscriptDelivery } from './dictation-transcript-delivery'
 import { trimLandedOverlap } from './dictation-retry-overlap'
+import { appendDictationText } from '../../../../shared/dictation-transcript-spacing'
 import { showRetryOverlapUnmatchedToast } from './dictation-toasts'
 
 // The cloud cap, ten minutes, is about 38 MB of 16 kHz float audio.
@@ -87,7 +88,10 @@ function* joinIntoBlocks(chunks: Float32Array[]): Generator<Float32Array> {
 
 // The retry repeats words that landed before the failure; only what follows them is typed.
 function insertAfterLanded(recording: DictationKeptRecording, retried: string[]): void {
-  const { text, matched } = trimLandedOverlap(recording.deliver.landedText(), retried.join(' '))
+  const { text, matched } = trimLandedOverlap(
+    recording.deliver.landedText(),
+    retried.reduce(appendDictationText, '')
+  )
   if (text) {
     recording.deliver(text, recording.target)
   }
