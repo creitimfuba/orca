@@ -125,6 +125,21 @@ function DictationPillMeter({ recording, status }: { recording: boolean; status:
   )
 }
 
+// Words heard but not committed yet: they land at the next pause.
+function DictationPendingDots() {
+  return (
+    <span className="ml-1.5 inline-flex gap-1 align-middle">
+      {[0, 150, 300].map((delayMs) => (
+        <span
+          key={delayMs}
+          className="size-1 animate-pulse rounded-full bg-muted-foreground motion-reduce:animate-none"
+          style={{ animationDelay: `${delayMs}ms` }}
+        />
+      ))}
+    </span>
+  )
+}
+
 // Presses on the pill keep focus where the words are going.
 const keepFocus = (event: React.MouseEvent): void => event.preventDefault()
 const keepFocusProps = { [KEEPS_FOCUS_ATTRIBUTE]: '', onMouseDown: keepFocus }
@@ -145,7 +160,7 @@ function DictationPill({ captureLive, anchor, failure, queued }: DictationIndica
   const showSpinner = useDelayedFlag(finishing, FINISH_SPINNER_DELAY_MS)
   const nearCloudLimit = cloudModel && seconds >= CLOUD_LIMIT_WARNING_SECONDS
   const failedKind = dictationState === 'error' ? failure : null
-  const committed = liveText.committed
+  const { committed, speechPending } = liveText
   const tentative = liveText.tentative.trim()
   const queuedStatus =
     queued === 'chat'
@@ -199,7 +214,7 @@ function DictationPill({ captureLive, anchor, failure, queued }: DictationIndica
               )}
               <span className="truncate">{queuedStatus}</span>
             </span>
-          ) : committed || tentative ? (
+          ) : committed || tentative || speechPending ? (
             // Right-aligned so the newest words stay in view; older ones fade off the left edge.
             <span
               aria-hidden
@@ -209,6 +224,7 @@ function DictationPill({ captureLive, anchor, failure, queued }: DictationIndica
                 {committed}
                 {committed && tentative ? ' ' : null}
                 <span className="text-muted-foreground">{tentative}</span>
+                {speechPending ? <DictationPendingDots /> : null}
               </span>
             </span>
           ) : (

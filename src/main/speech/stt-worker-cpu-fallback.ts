@@ -14,6 +14,7 @@ export type SttGpuPolicy = {
 type Feed = Extract<SttWorkerRequest, { type: 'feed' }>
 type ChildMessage =
   | { type: 'chunk'; streamId: string; text: string; samples: number }
+  | { type: 'speech-pending'; streamId: string; pending: boolean }
   | {
       type: 'ready' | 'stopped' | 'error' | 'partial' | 'final'
       streamId?: string
